@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'CaptchaFace', :exclusive => true do
+  pod "CaptchaFace", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "CaptchaFace", :path => "../"
+
+  
+end
