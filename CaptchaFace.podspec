@@ -9,30 +9,25 @@
 
 Pod::Spec.new do |s|
   s.name             = "CaptchaFace"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of CaptchaFace."
+  s.version          = "0.9"
+  s.summary          = "The mobile visual captcha"
   s.description      = <<-DESC
                        An optional longer description of CaptchaFace
 
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/CaptchaFace"
+  s.homepage         = "https://github.com/wassafr/CaptchaFace-ios"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
-  s.author           = { "Peter Schaeffer" => "peter.schaeffer@wassa.fr" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/CaptchaFace.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.license          = 'COMMERCIAL'
+  s.author           = { "wassa" => "contact@wassa.fr" }
+  s.source           = { :git => "https://github.com/wassafr/CaptchaFace-ios.git", :tag => s.version.to_s }
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes'
-  s.resource_bundles = {
-    'CaptchaFace' => ['Pod/Assets/*.png']
-  }
+  s.resources = ['Pod/Assets/*']
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'Pod/Headers/*.h'
+  s.vendored_libraries= 'Pod/lib/libWtfSDK.a'
+  s.dependency 'OpenCV', '~> 2.4'
 end
