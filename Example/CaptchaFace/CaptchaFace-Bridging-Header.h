@@ -4,3 +4,4 @@
 
 #import "CaptchaFace/UIViewController+CaptchaFace.h"
 #import "CaptchaFaceParameterViewController.h"
+#import "CaptchaFaceViewController.h"

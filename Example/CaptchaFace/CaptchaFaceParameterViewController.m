@@ -8,7 +8,7 @@
 
 #import "CaptchaFaceParameterViewController.h"
 #import "CaptchaFaceEvent.h"
-#import "CaptchaFaceEvent+utilities.swift"
+#import "CaptchaFace-Swift.h"
 
 @interface CaptchaFaceParameterViewController ()
 
@@ -17,21 +17,24 @@
 @property (assign, nonatomic) BOOL okButtonPressed;
 @property (assign, nonatomic) CGRect offFrame;
 @property (assign, nonatomic) CGRect onFrame;
-
+@property (assign, nonatomic) int animationLapsTime;
+@property (assign, nonatomic) int navigationBarPadding;
 @end
 
 @implementation CaptchaFaceParameterViewController
 
 #pragma mark - Life cycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
     self.minRandomValue = self.maxRandomValue = 0;
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:255 green:151 blue:43 alpha:1];
     
     
-    self.pickerData = [CaptchaFaceEvent
+    self.pickerData = [CaptchaFaceEvent faceEventsStrings];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -54,9 +57,10 @@
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
     self.pickerView.backgroundColor = [UIColor whiteColor];
-    int kNavigationBarPadding = 64;
+    self.navigationBarPadding = 64;
+    self.animationLapsTime = 0.25;
     self.offFrame = CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, self.pickerView.bounds.size.height);
-    self.onFrame = CGRectMake(0, self.view.bounds.size.height - kNavigationBarPadding - self.pickerView.bounds.size.height, self.view.bounds.size.width, self.pickerView.bounds.size.height);
+    self.onFrame = CGRectMake(0, self.view.bounds.size.height - self.navigationBarPadding - self.pickerView.bounds.size.height, self.view.bounds.size.width, self.pickerView.bounds.size.height);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -96,7 +100,7 @@
 -(void)dismiss
 {
     [self.editingTextField resignFirstResponder];
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:self.animationLapsTime animations:^{
         [self.pickerView setFrame:self.offFrame];
     }];
     
@@ -231,7 +235,7 @@
     else
     {
         //pop pickerView
-        [UIView animateWithDuration:0.75 animations:^{
+        [UIView animateWithDuration:self.animationLapsTime animations:^{
             [self.pickerView setFrame:self.onFrame];
         }];
         return NO;
@@ -244,7 +248,7 @@
     // Note that the frame width (third value in the CGRectMake method)
     // should change accordingly in landscape orientation. But we don’t care
     // about that now.
-    UIView *inputAccView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 310.0, 40.0)];
+    UIView *inputAccView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, self.view.bounds.size.width, 40.0)];
     
     // Set the view’s background color. We’ ll set it here to gray. Use any color you want.
     [inputAccView setBackgroundColor:[UIColor lightGrayColor]];
@@ -359,7 +363,7 @@
         if (![obj isKindOfClass:NSNull.class])
         {
             self.eventButton.userInteractionEnabled = YES;
-            self.eventButton.tintColor = [UIColor colorWithRed:255/255.0 green:151/255.0 blue:43/255.0 alpha:1];
+            self.eventButton.tintColor = [UIColor CaptchaColor:939598 alpha:1];
         }
     }];
 }

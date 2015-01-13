@@ -9,6 +9,7 @@
 #import "CaptchaFaceViewController.h"
 #import "CaptchaFace/UIViewController+CaptchaFace.h"
 #import "CaptchaFaceParameterViewController.h"
+#import "CaptchaFace-Swift.h"
 
 @interface CaptchaFaceViewController ()
 
@@ -83,7 +84,7 @@
             }
             else
             {
-                NSMutableArray *events = [self getEventsArrayWithSettings:self.customSettings];
+                NSArray *events = [CaptchaFaceEvent faceEvents:[CaptchaFaceEvent faceEventsStrings]];
                 scenario = [CaptchaFaceScenario scenarioWithEvents:events intervalBetweenEvents:1.0 failureTimeInterval:5.0];
             }
         }

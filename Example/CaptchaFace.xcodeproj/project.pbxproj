@@ -25,9 +25,8 @@
 		81416A281A41C2D400660B91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81416A261A41C2D400660B91 /* Main.storyboard */; };
 		81416A2B1A41C5EA00660B91 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81416A291A41C5EA00660B91 /* LaunchScreen.xib */; };
 		CE30F3981A63C9EF0025BD1B /* CaptchaFaceParameterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD41481A5D7CB900D09790 /* CaptchaFaceParameterViewController.m */; };
-		CEC07B921A642B3E00EB8208 /* CaptchaFaceSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8110949F1A43277D00FCF893 /* CaptchaFaceSwiftViewController.swift */; };
 		CEC07B941A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC07B931A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift */; };
-		CECD41461A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD41451A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift */; };
+		CEC07B9C1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC07B9B1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift */; };
 		CECD414B1A5D836000D09790 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CECD414A1A5D836000D09790 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +73,7 @@
 		BA64F860E6B8B910A8C201D3 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE30F3961A63C9D80025BD1B /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = project.xcworkspace; path = CaptchaFace.xcodeproj/project.xcworkspace; sourceTree = "<group>"; };
 		CEC07B931A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaptchaFaceEvent+utilities.swift"; sourceTree = "<group>"; };
+		CEC07B9B1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaptchaFace-CaptchaColor.swift"; sourceTree = "<group>"; };
 		CECD41451A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaFaceSwiftParameterViewController.swift; sourceTree = "<group>"; };
 		CECD41471A5D7CB900D09790 /* CaptchaFaceParameterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptchaFaceParameterViewController.h; sourceTree = "<group>"; };
 		CECD41481A5D7CB900D09790 /* CaptchaFaceParameterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptchaFaceParameterViewController.m; sourceTree = "<group>"; };
@@ -178,6 +178,7 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEC07B9B1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift */,
 				6003F595195388D20070C39A /* CaptchaFace-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
@@ -383,11 +384,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC07B9C1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift in Sources */,
 				CE30F3981A63C9EF0025BD1B /* CaptchaFaceParameterViewController.m in Sources */,
 				6003F59E195388D20070C39A /* CaptchaFaceAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* CaptchaFaceViewController.m in Sources */,
-				CECD41461A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift in Sources */,
-				CEC07B921A642B3E00EB8208 /* CaptchaFaceSwiftViewController.swift in Sources */,
 				CEC07B941A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

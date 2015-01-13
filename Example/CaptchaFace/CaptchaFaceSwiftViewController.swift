@@ -24,30 +24,27 @@ class CaptchaFaceSwiftViewController: UIViewController, SettingsProtocol
     var customSettings : Array<String>
     var settingsMode:Bool
     
-    func internal_init()
+    required init(coder aDecoder: NSCoder)
     {
         settingsSave = false
         settingsMode = false
         self.randomSettings = []
         self.customSettings = []
-
-    }
-    
-    required init(coder aDecoder: NSCoder)
-    {
-        internal_init()
         super.init(coder: aDecoder)
     }
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-      
-        internal_init()
-        super.init(nibName: nil, bundle: nil)
-    }
+//    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+//      
+//        settingsSave = false
+//        settingsMode = false
+//        self.randomSettings = []
+//        self.customSettings = []
+//        super.init(nibName: nil, bundle: nil)
+//    }
     
-    convenience override init() {
-        self.init(nibName: nil, bundle: nil)
-    }
+//    convenience override init() {
+//        self.init(nibName: nil, bundle: nil)
+//    }
     
     
     func setRandomSettings(randomSettings: NSMutableArray!) {
