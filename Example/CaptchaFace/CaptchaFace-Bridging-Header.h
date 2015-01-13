@@ -3,3 +3,4 @@
 //
 
 #import "CaptchaFace/UIViewController+CaptchaFace.h"
+#import "CaptchaFaceParameterViewController.h"

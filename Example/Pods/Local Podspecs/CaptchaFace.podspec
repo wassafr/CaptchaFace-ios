@@ -17,11 +17,11 @@ Pod::Spec.new do |s|
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/lilpit/CaptchaFace-ios"
+  s.homepage         = "https://github.com/wassafr/CaptchaFace-ios"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'COMMERCIAL'
   s.author           = { "wassa" => "contact@wassa.fr" }
-  s.source           = { :git => "https://github.com/lilpit/CaptchaFace-ios", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/wassafr/CaptchaFace-ios.git", :tag => s.version.to_s }
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 

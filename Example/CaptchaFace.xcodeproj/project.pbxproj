@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CA6A1F92F7A7AC0DC469AE3 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6EE57CD2B4242A1070F67C /* libPods-Tests.a */; };
+		4E3D6AA52EAFC6294B9582CB /* libPods-CaptchaFace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4DB63DAB89DC2B89E1ECD8 /* libPods-CaptchaFace.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,10 +22,13 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		811094A01A43277D00FCF893 /* CaptchaFaceSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8110949F1A43277D00FCF893 /* CaptchaFaceSwiftViewController.swift */; };
 		81416A281A41C2D400660B91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81416A261A41C2D400660B91 /* Main.storyboard */; };
 		81416A2B1A41C5EA00660B91 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81416A291A41C5EA00660B91 /* LaunchScreen.xib */; };
-		9AB42290BD37CBB25C5D0463 /* libPods-CaptchaFace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF4DB63DAB89DC2B89E1ECD8 /* libPods-CaptchaFace.a */; };
+		CE30F3981A63C9EF0025BD1B /* CaptchaFaceParameterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD41481A5D7CB900D09790 /* CaptchaFaceParameterViewController.m */; };
+		CEC07B921A642B3E00EB8208 /* CaptchaFaceSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8110949F1A43277D00FCF893 /* CaptchaFaceSwiftViewController.swift */; };
+		CEC07B941A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC07B931A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift */; };
+		CECD41461A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD41451A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift */; };
+		CECD414B1A5D836000D09790 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CECD414A1A5D836000D09790 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,12 @@
 		81416A2A1A41C5EA00660B91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		97AF52FD6C566E43CD7CF8EA /* Pods-CaptchaFace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaptchaFace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaptchaFace/Pods-CaptchaFace.debug.xcconfig"; sourceTree = "<group>"; };
 		BA64F860E6B8B910A8C201D3 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE30F3961A63C9D80025BD1B /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = project.xcworkspace; path = CaptchaFace.xcodeproj/project.xcworkspace; sourceTree = "<group>"; };
+		CEC07B931A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaptchaFaceEvent+utilities.swift"; sourceTree = "<group>"; };
+		CECD41451A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaFaceSwiftParameterViewController.swift; sourceTree = "<group>"; };
+		CECD41471A5D7CB900D09790 /* CaptchaFaceParameterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptchaFaceParameterViewController.h; sourceTree = "<group>"; };
+		CECD41481A5D7CB900D09790 /* CaptchaFaceParameterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptchaFaceParameterViewController.m; sourceTree = "<group>"; };
+		CECD414A1A5D836000D09790 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CF4DB63DAB89DC2B89E1ECD8 /* libPods-CaptchaFace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CaptchaFace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5588FFE61CE5345B5D757A4 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +90,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				9AB42290BD37CBB25C5D0463 /* libPods-CaptchaFace.a in Frameworks */,
+				4E3D6AA52EAFC6294B9582CB /* libPods-CaptchaFace.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +143,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE30F3961A63C9D80025BD1B /* project.xcworkspace */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -152,10 +163,14 @@
 				6003F59D195388D20070C39A /* CaptchaFaceAppDelegate.m */,
 				6003F5A5195388D20070C39A /* CaptchaFaceViewController.h */,
 				6003F5A6195388D20070C39A /* CaptchaFaceViewController.m */,
+				CECD41471A5D7CB900D09790 /* CaptchaFaceParameterViewController.h */,
+				CECD41481A5D7CB900D09790 /* CaptchaFaceParameterViewController.m */,
 				8110949C1A4325B300FCF893 /* CaptchaFace-Bridging-Header.h */,
 				8110949F1A43277D00FCF893 /* CaptchaFaceSwiftViewController.swift */,
+				CECD41451A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				CEC07B931A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift */,
 			);
 			path = CaptchaFace;
 			sourceTree = "<group>";
@@ -167,6 +182,7 @@
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
 				6003F59B195388D20070C39A /* CaptchaFace-Prefix.pch */,
+				CECD414A1A5D836000D09790 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,7 +265,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CaptchaFace;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Peter Schaeffer";
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
@@ -281,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECD414B1A5D836000D09790 /* Localizable.strings in Resources */,
 				81416A2B1A41C5EA00660B91 /* LaunchScreen.xib in Resources */,
 				81416A281A41C2D400660B91 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -366,9 +383,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE30F3981A63C9EF0025BD1B /* CaptchaFaceParameterViewController.m in Sources */,
 				6003F59E195388D20070C39A /* CaptchaFaceAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* CaptchaFaceViewController.m in Sources */,
-				811094A01A43277D00FCF893 /* CaptchaFaceSwiftViewController.swift in Sources */,
+				CECD41461A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift in Sources */,
+				CEC07B921A642B3E00EB8208 /* CaptchaFaceSwiftViewController.swift in Sources */,
+				CEC07B941A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,7 +529,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CaptchaFace/CaptchaFace-Prefix.pch";
 				INFOPLIST_FILE = "CaptchaFace/CaptchaFace-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CaptchaFace/CaptchaFace-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -527,6 +549,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CaptchaFace/CaptchaFace-Prefix.pch";
 				INFOPLIST_FILE = "CaptchaFace/CaptchaFace-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CaptchaFace/CaptchaFace-Bridging-Header.h";

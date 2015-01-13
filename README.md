@@ -45,6 +45,8 @@ from the command line.
 
 Make sure you also see [CaptchaFace documentation on Cocoadocs](http://cocoadocs.org/docsets/CaptchaFace).
 
+**Attention :** To use the SDK, you need a API key that you can get on the [CaptchaFace website](http://captchaface.com)
+
 ###Basics
 1. Add the following import to the top of the file or the bringing header for swift:
 
