@@ -20,51 +20,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.randomSettings = [NSMutableArray arrayWithArray:@[]];
+    self.randomSettings = [NSMutableArray arrayWithArray:@[@(-1), @(-1)]];
     self.customSettings = [NSMutableArray arrayWithArray:@[]];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.savedLabel.hidden = self.settingsSaved ? NO : YES;
+    self.navigationController.navigationBar.hidden = YES;
+    if (self.settingsSaved)
+    {
+        self.savedLabel.transform = CGAffineTransformScale(self.savedLabel.transform, 0.35, 0.35);
+        [UIView animateWithDuration:0.75 animations:^{
+            self.savedLabel.transform = CGAffineTransformScale(self.savedLabel.transform, 6, 6);
+            [UIView animateWithDuration:1.0 animations:^{
+                self.savedLabel.transform = CGAffineTransformScale(self.savedLabel.transform, 0.5, 0.5);
+            }];
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)didPressStartCaptcha:(id)sender
-//{
-//    //first check if the device supports wtf
-//    if([UIDevice supportsCapchaFace])
-//    {
-//        //Display the captchaFace viewcontroller
-//        [self showCaptchaViewControllerWithLicenceKey:@"<your_key>" completion:^(NSError *error, int successCount, int totalCount) {
-//        
-//            //if no error, the capcha finished without technical error (but the user may have failed validation steps)
-//            if(!error)
-//            {
-//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Captcha completed" message:[NSString stringWithFormat:@"%d / %d completed",successCount,totalCount] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//                [alert show];
-//            }
-//            //an error with the userCancelation domain is returned if the user cancels the captcha
-//            else if([error.domain isEqualToString:@"userCancelation"])
-//            {
-//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Captcha canceled" message:@"you canceled the captcha" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//                [alert show];
-//            }
-//            else
-//            {
-//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Captcha not started" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//                [alert show];
-//            }
-//        }];
-//    }
-//}
 
 - (IBAction)didPressStartCaptcha:(id)sender
 {
@@ -84,7 +65,7 @@
             }
             else
             {
-                NSArray *events = [CaptchaFaceEvent faceEvents:[CaptchaFaceEvent faceEventsStrings]];
+                NSArray *events = [CaptchaFaceEvent faceEvents:self.customSettings];
                 scenario = [CaptchaFaceScenario scenarioWithEvents:events intervalBetweenEvents:1.0 failureTimeInterval:5.0];
             }
         }
@@ -92,8 +73,8 @@
         {
             scenario = nil;
         }
-#warning changer la licence en <your_key>
-        [self showCaptchaViewControllerWithLicenceKey:@"azertyuiop" scenario:scenario completion:^(NSError *error, int successCount, int totalCount)
+#warning replace <your_key> by real one ( available on captchaface.com )
+        [self showCaptchaViewControllerWithLicenceKey:@"<your_key>" scenario:scenario completion:^(NSError *error, int successCount, int totalCount)
          {
              
              //if no error, the capcha finished without technical error (but the user may have failed validation steps)
@@ -117,52 +98,15 @@
     }
 }
 
-//- (NSMutableArray *)getEventsArrayWithSettings:(NSArray *)anArray
-//{
-//    NSMutableArray *eventsArray = [[NSMutableArray alloc] init];
-//    
-//    [anArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//        CaptchaFaceEvent *event;
-//        if ([obj isEqualToString:NSLocalizedString(@"move_up", nil)])
-//        {
-//            event = [CaptchaFaceEvent moveUp];
-//        }
-//        else if ([obj isEqualToString:NSLocalizedString(@"move_down", nil)])
-//        {
-//            event = [CaptchaFaceEvent moveDown];
-//        }
-//        else if ([obj isEqualToString:NSLocalizedString(@"move_left", nil)])
-//        {
-//            event = [CaptchaFaceEvent moveLeft];
-//        }
-//        else if ([obj isEqualToString:NSLocalizedString(@"move_right", nil)])
-//        {
-//            event = [CaptchaFaceEvent moveRight];
-//        }
-//        else if ([obj isEqualToString:NSLocalizedString(@"move_forward", nil)])
-//        {
-//            event = [CaptchaFaceEvent moveForward];
-//        }
-//        else if ([obj isEqualToString:NSLocalizedString(@"move_backward", nil)])
-//        {
-//            event = [CaptchaFaceEvent moveBackward];
-//        }
-//        else if ([obj isEqualToString:NSLocalizedString(@"smile", nil)])
-//        {
-//            event = [CaptchaFaceEvent smile];
-//        }
-//        else if ([obj isEqualToString:NSLocalizedString(@"smile", nil)])
-//        {
-//            event = [CaptchaFaceEvent yell];
-//        }
-//        eventsArray[idx]=event;
-//    }];
-//    return eventsArray;
-//}
-
 - (IBAction)didPressParameter:(id)sender
 {
     [self performSegueWithIdentifier:@"showParameters" sender:self];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    //self.settingsSaved = NO;
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -172,7 +116,6 @@
     if ([controller isKindOfClass:[CaptchaFaceParameterViewController class]])
     {
         CaptchaFaceParameterViewController* viewController = (CaptchaFaceParameterViewController *)controller;
-        viewController.delegate = self;
         viewController.randomData = self.randomSettings;
         viewController.customData = self.customSettings;
     }

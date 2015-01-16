@@ -16,9 +16,9 @@ extension CaptchaFaceEvent
         return eventsStrings
     }
     
-    class func faceEvents(names:[AnyObject]) -> [AnyObject]?
+    class func faceEvents(names:[AnyObject]) -> [AnyObject]
     {
-        var events:[CaptchaFaceEvent]?
+        var events = Array<CaptchaFaceEvent>()
         
         for name in names
         {
@@ -40,10 +40,19 @@ extension CaptchaFaceEvent
                 event = CaptchaFaceEvent.moveForward()
             case NSLocalizedString("move_backward",comment:""):
                 event = CaptchaFaceEvent.moveBackward()
+            case NSLocalizedString("smile",comment:""):
+                event = CaptchaFaceEvent.smile()
+            case NSLocalizedString("yell",comment:""):
+                event = CaptchaFaceEvent.yell()
             default :
                 event = nil
             }
-                events?.append(event!)
+            
+            if let actualEvent = event?
+            {
+                events.append(actualEvent)
+            }
+            
         }
         return events
     }

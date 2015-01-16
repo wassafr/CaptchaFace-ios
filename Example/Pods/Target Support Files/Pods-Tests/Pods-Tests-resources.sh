@@ -47,29 +47,7 @@ install_resource()
       ;;
   esac
 }
-          install_resource "../../Pod/Assets/CAPTCHA_BLUE_ELLIPSE.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_DONE.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_EVENT_EMO_SMILE.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_EVENT_EMO_SURPRISED.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_EVENT_MOVE_BACKWARD.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_EVENT_MOVE_DOWN.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_EVENT_MOVE_FORWARD.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_EVENT_MOVE_LEFT.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_EVENT_MOVE_RIGHT.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_EVENT_MOVE_UP.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_FACE_CALIB.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_FACE_READY.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_FACE_RETRY.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_FAIL.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_GREEN_ELLIPSE.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_RED_ELLIPSE.png"
-                    install_resource "../../Pod/Assets/CAPTCHA_SUCCESS.png"
-                    install_resource "../../Pod/Assets/emotiondetection_happy.yml"
-                    install_resource "../../Pod/Assets/emotiondetection_neutral.yml"
-                    install_resource "../../Pod/Assets/emotiondetection_sad.yml"
-                    install_resource "../../Pod/Assets/emotiondetection_surprise.yml"
-                    install_resource "../../Pod/Assets/facedetection.xml"
-                    install_resource "../../Pod/Assets/var_imp_mask.yml"
+          install_resource "../../Pod/Assets/wtf_captchaface_complete_1.0.0.zip"
           
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then

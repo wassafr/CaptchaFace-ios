@@ -10,12 +10,13 @@ import Foundation
 
 extension UIColor
 {
-    class func CaptchaColor(hex: Int, alpha: Double = 1.0) -> UIColor
+    class func captchaGray() -> UIColor
     {
-        let red = Double((hex & 0xFF0000) >> 16) / 255.0
-        let green = Double((hex & 0xFF00) >> 8) / 255.0
-        let blue = Double((hex & 0xFF)) / 255.0
-        var color: UIColor = UIColor( red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha:CGFloat(alpha) )
-        return color
+        return UIColor(red: 147/255.0, green: 149/255.0, blue: 152/255.0, alpha: 1)
+    }
+    
+    class func captchaBlue() -> UIColor
+    {
+        return UIColor(red: 0, green: 91/255.0, blue:126/255.0, alpha: 1)
     }
 }

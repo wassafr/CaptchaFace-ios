@@ -16,7 +16,6 @@
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* CaptchaFaceAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* CaptchaFaceAppDelegate.m */; };
 		6003F5A7195388D20070C39A /* CaptchaFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* CaptchaFaceViewController.m */; };
-		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -25,8 +24,13 @@
 		81416A281A41C2D400660B91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81416A261A41C2D400660B91 /* Main.storyboard */; };
 		81416A2B1A41C5EA00660B91 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81416A291A41C5EA00660B91 /* LaunchScreen.xib */; };
 		CE30F3981A63C9EF0025BD1B /* CaptchaFaceParameterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD41481A5D7CB900D09790 /* CaptchaFaceParameterViewController.m */; };
+		CE7349571A6669420085F440 /* CaptchaFaceSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8110949F1A43277D00FCF893 /* CaptchaFaceSwiftViewController.swift */; };
 		CEC07B941A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC07B931A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift */; };
 		CEC07B9C1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC07B9B1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift */; };
+		CEC9478C1A66CFFE00E225B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC9478B1A66CFFE00E225B1 /* Images.xcassets */; };
+		CEC9478D1A66D12300E225B1 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC07B9E1A6586D600EB8208 /* Raleway-ExtraBold.ttf */; };
+		CEC9478E1A66D12300E225B1 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC07B9F1A6586D600EB8208 /* Raleway-Light.ttf */; };
+		CEC9478F1A66D12300E225B1 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC07BA01A6586D600EB8208 /* Raleway-SemiBold.ttf */; };
 		CECD414B1A5D836000D09790 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CECD414A1A5D836000D09790 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +61,6 @@
 		6003F59D195388D20070C39A /* CaptchaFaceAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptchaFaceAppDelegate.m; sourceTree = "<group>"; };
 		6003F5A5195388D20070C39A /* CaptchaFaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptchaFaceViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* CaptchaFaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptchaFaceViewController.m; sourceTree = "<group>"; };
-		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
@@ -74,7 +77,10 @@
 		CE30F3961A63C9D80025BD1B /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = project.xcworkspace; path = CaptchaFace.xcodeproj/project.xcworkspace; sourceTree = "<group>"; };
 		CEC07B931A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaptchaFaceEvent+utilities.swift"; sourceTree = "<group>"; };
 		CEC07B9B1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaptchaFace-CaptchaColor.swift"; sourceTree = "<group>"; };
-		CECD41451A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaFaceSwiftParameterViewController.swift; sourceTree = "<group>"; };
+		CEC07B9E1A6586D600EB8208 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		CEC07B9F1A6586D600EB8208 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		CEC07BA01A6586D600EB8208 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		CEC9478B1A66CFFE00E225B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CECD41471A5D7CB900D09790 /* CaptchaFaceParameterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptchaFaceParameterViewController.h; sourceTree = "<group>"; };
 		CECD41481A5D7CB900D09790 /* CaptchaFaceParameterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptchaFaceParameterViewController.m; sourceTree = "<group>"; };
 		CECD414A1A5D836000D09790 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -167,8 +173,6 @@
 				CECD41481A5D7CB900D09790 /* CaptchaFaceParameterViewController.m */,
 				8110949C1A4325B300FCF893 /* CaptchaFace-Bridging-Header.h */,
 				8110949F1A43277D00FCF893 /* CaptchaFaceSwiftViewController.swift */,
-				CECD41451A5D7C9500D09790 /* CaptchaFaceSwiftParameterViewController.swift */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 				CEC07B931A642E3400EB8208 /* CaptchaFaceEvent+utilities.swift */,
 			);
@@ -178,6 +182,10 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEC9478B1A66CFFE00E225B1 /* Images.xcassets */,
+				CEC07B9E1A6586D600EB8208 /* Raleway-ExtraBold.ttf */,
+				CEC07B9F1A6586D600EB8208 /* Raleway-Light.ttf */,
+				CEC07BA01A6586D600EB8208 /* Raleway-SemiBold.ttf */,
 				CEC07B9B1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift */,
 				6003F595195388D20070C39A /* CaptchaFace-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
@@ -269,6 +277,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Peter Schaeffer";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 64Z6476XJF;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -298,10 +309,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC9478D1A66D12300E225B1 /* Raleway-ExtraBold.ttf in Resources */,
+				CEC9478E1A66D12300E225B1 /* Raleway-Light.ttf in Resources */,
+				CEC9478F1A66D12300E225B1 /* Raleway-SemiBold.ttf in Resources */,
 				CECD414B1A5D836000D09790 /* Localizable.strings in Resources */,
+				CEC9478C1A66CFFE00E225B1 /* Images.xcassets in Resources */,
 				81416A2B1A41C5EA00660B91 /* LaunchScreen.xib in Resources */,
 				81416A281A41C2D400660B91 /* Main.storyboard in Resources */,
-				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7349571A6669420085F440 /* CaptchaFaceSwiftViewController.swift in Sources */,
 				CEC07B9C1A655A3000EB8208 /* CaptchaFace-CaptchaColor.swift in Sources */,
 				CE30F3981A63C9EF0025BD1B /* CaptchaFaceParameterViewController.m in Sources */,
 				6003F59E195388D20070C39A /* CaptchaFaceAppDelegate.m in Sources */,
@@ -502,7 +517,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WASSA";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WASSA";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -513,6 +529,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "81571e92-d55b-4e55-858d-bef71a652e90";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -526,15 +543,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CaptchaFace/CaptchaFace-Prefix.pch";
 				INFOPLIST_FILE = "CaptchaFace/CaptchaFace-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CaptchaFace/CaptchaFace-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -546,13 +564,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CaptchaFace/CaptchaFace-Prefix.pch";
 				INFOPLIST_FILE = "CaptchaFace/CaptchaFace-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "81571e92-d55b-4e55-858d-bef71a652e90";
 				SWIFT_OBJC_BRIDGING_HEADER = "CaptchaFace/CaptchaFace-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

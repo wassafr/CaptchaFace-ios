@@ -21,7 +21,6 @@
 @property (strong, nonatomic) NSArray *pickerData;
 @property (strong, nonatomic) NSMutableArray *randomData;
 @property (strong, nonatomic) NSMutableArray *customData;
-@property (nonatomic, weak) id<SettingsProtocol> delegate;
 
 @property (strong, nonatomic) IBOutlet UIButton *eventButton;
 @property (strong, nonatomic) IBOutlet UILabel *eventLabel;

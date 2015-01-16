@@ -11,22 +11,13 @@
  *  Objective-C sample use
  */
 
-@protocol SettingsProtocol
-
-- (void)setRandomSettings:(NSMutableArray *)randomSettings;
-- (void)setCustomSettings:(NSMutableArray *)customSettings;
-- (void)setSettingsSaved: (BOOL)savedOrNot;
-- (void)setSettingsMode: (BOOL)randomOrNot;
-
-@end
-
-@interface CaptchaFaceViewController : UIViewController <SettingsProtocol>
+@interface CaptchaFaceViewController : UIViewController
 
 @property(nonatomic, strong) NSMutableArray *randomSettings;
 @property(nonatomic, strong) NSMutableArray *customSettings;
 @property (strong, nonatomic) IBOutlet UILabel *savedLabel;
-@property (assign, nonatomic) BOOL *settingsSaved;
-@property (assign, nonatomic) BOOL *settingsMode;
+@property (assign, nonatomic) BOOL settingsSaved;
+@property (assign, nonatomic) BOOL settingsMode;
 
 - (IBAction)didPressStartCaptcha:(id)sender;
 @end

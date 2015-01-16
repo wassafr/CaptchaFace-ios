@@ -11,7 +11,8 @@
 "event" = "Event";
 "choose_event" = "Choose an event";
 "oups" = "Oups";
-"oups_message" = "Please enter a greater value than the minimum time you've set";
+"oups_message" = "Please enter a valid value";
+"oups_no_value" = "Please enter a value";
 "ok" = "OK";
 "back" = "Back";
 
