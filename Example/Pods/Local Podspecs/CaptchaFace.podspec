@@ -9,16 +9,10 @@
 
 Pod::Spec.new do |s|
   s.name             = "CaptchaFace"
-  s.version          = "0.9"
-  s.summary          = "The mobile visual captcha"
-  s.description      = <<-DESC
-                       An optional longer description of CaptchaFace
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
+  s.version          = "1.0"
+  s.summary          = "Captchaface SDK reinvents mobile security by ensuring users of an app are real."
+  #s.description      = <<-DESCDESC
   s.homepage         = "https://github.com/wassafr/CaptchaFace-ios"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'COMMERCIAL'
   s.author           = { "wassa" => "contact@wassa.fr" }
   s.source           = { :git => "https://github.com/wassafr/CaptchaFace-ios.git", :tag => s.version.to_s }

@@ -1,5 +1,5 @@
 PODS:
-  - CaptchaFace (0.9):
+  - CaptchaFace (1.0):
     - OpenCV (~> 2.4)
   - OpenCV (2.4.9.1)
 
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CaptchaFace: 79d84a322a9f6df36487ec7fde213463a9902cb5
+  CaptchaFace: f10d591f8b8af1928ae95368f5d0512ce0e72bf9
   OpenCV: 4190ad68e79e1b9ae7ac53d749e96e8c05041e45
 
 COCOAPODS: 0.35.0
