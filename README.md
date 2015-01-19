@@ -19,7 +19,7 @@ CaptchaFace is a tool that allows you to know if a mobile user is really human b
 
 ### Manual installation
 
-1. Download the [latest code version](https://github.com/lilpit/CaptchaFace-ios/archive/master.zip) or add the repository as a git submodule to your git-tracked project.
+1. Download the [latest code version](https://github.com/wassafr/CaptchaFace-ios/archive/master.zip) or add the repository as a git submodule to your git-tracked project.
 2. Drag and drop the **Pod** directory from the archive in your project navigator. Make sure to select *Copy items* when asked if you extracted the code archive outside of your project.
 3. Download the [opencv library](http://sourceforge.net/projects/opencvlibrary/files/opencv-ios/2.4.10/opencv2.framework.zip/download) and drag and drop the opencv2.framework in your project navigator.
 4. Add the opencv dependancies in your project properties in *Build Phases* > *Link with libraries* :
