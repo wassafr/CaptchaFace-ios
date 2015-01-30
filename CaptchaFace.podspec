@@ -20,8 +20,8 @@ Pod::Spec.new do |s|
 
   s.resources = ['Pod/Assets/*']
 
-  s.source_files = 'Pod/**/*.h'
-  s.public_header_files = 'Pod/**/*.h'
+  s.source_files = 'Pod/Headers/*.h'
+  s.public_header_files = 'Pod/Headers/*.h'
   s.vendored_libraries= 'Pod/lib/libWtfSDK.a'
   s.dependency 'OpenCV', '~> 2.4'
 end
