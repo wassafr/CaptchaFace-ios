@@ -51,7 +51,7 @@ Make sure you also see [CaptchaFace documentation on Cocoadocs](http://cocoadocs
 1. Add the following import to the top of the file or the bringing header for swift:
 
     ```objc
-    #import "CaptchaFace/UIViewController+CaptchaFace.h"
+    #import <CaptchaFace/UIViewController+CaptchaFace.h>
     ```
 
 2. Check if the user can run CaptchaFace using :
@@ -65,7 +65,7 @@ Make sure you also see [CaptchaFace documentation on Cocoadocs](http://cocoadocs
       UIDevice.supportsCapchaFace()
   ```
 
-3. Show the captcha viewController with default parameters
+3. Show the captcha viewController with default parameters ( have to be called from any application's ViewController )
 
    ```objc
    // Objective-C
