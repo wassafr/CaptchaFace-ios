@@ -13,6 +13,7 @@
 "oups" = "Oups";
 "oups_message" = "Please enter a valid value";
 "oups_no_value" = "Please enter a value";
+"oups_higher_value" = "Please enter a higher value";
 "ok" = "OK";
 "back" = "Back";
 

@@ -74,7 +74,7 @@
             scenario = nil;
         }
 #warning replace <your_key> by real one ( available on captchaface.com )
-        [self showCaptchaViewControllerWithLicenceKey:@"<your_key>" scenario:scenario completion:^(NSError *error, int successCount, int totalCount)
+        [self showCaptchaViewControllerWithLicenceKey:@"azertyuiop" scenario:scenario completion:^(NSError *error, int successCount, int totalCount)
          {
              
              //if no error, the capcha finished without technical error (but the user may have failed validation steps)

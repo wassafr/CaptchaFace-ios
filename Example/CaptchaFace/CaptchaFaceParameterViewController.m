@@ -20,6 +20,8 @@ const int NAVIGATIONBAR_PADDING = 44;
 @property (assign, nonatomic) int maxRandomValue;
 @property (assign, nonatomic) CGRect offFrame;
 @property (assign, nonatomic) CGRect onFrame;
+@property (assign, nonatomic) CGRect smallTableViewFrame;
+@property (assign, nonatomic) CGRect bigTableViewFrame;
 @end
 
 @implementation CaptchaFaceParameterViewController
@@ -51,9 +53,11 @@ const int NAVIGATIONBAR_PADDING = 44;
     {
         self.datasource = [NSMutableArray arrayWithArray:@[]];
     }
-    
+    int firstHeightOfTableView = self.tableView.bounds.size.height;
     self.offFrame = CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, self.pickerView.bounds.size.height);
     self.onFrame = CGRectMake(0, self.view.bounds.size.height - self.pickerView.bounds.size.height, self.view.bounds.size.width, self.pickerView.bounds.size.height);
+    self.bigTableViewFrame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.view.frame.size.width, firstHeightOfTableView);
+    self.smallTableViewFrame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.view.frame.size.width, firstHeightOfTableView - self.pickerView.frame.size.height - 32);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -61,9 +65,11 @@ const int NAVIGATIONBAR_PADDING = 44;
     [super viewWillAppear:animated];
     self.eventButton.hidden = YES;
     self.eventLabel.hidden = YES;
-    self.headerView.backgroundColor = [UIColor clearColor];    //self.bottomConstraint.constant = -self.pickerView.bounds.size.height;
+    self.headerView.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.hidden = NO;
     self.segmentedControl.selectedSegmentIndex = 0;
+    [self.pickerView setFrame:self.offFrame];
+    [self.tableView setFrame:self.bigTableViewFrame];
 }
 
 
@@ -85,11 +91,12 @@ const int NAVIGATIONBAR_PADDING = 44;
 
 -(void)dismiss
 {
-    [self.editingTextField resignFirstResponder];
     [UIView animateWithDuration:ANIMATION_LAPSTIME animations:^{
         [self.pickerView setFrame:self.offFrame];
+        [self.tableView setFrame:self.bigTableViewFrame];
     }];
-    
+    self.eventButton.userInteractionEnabled = YES;
+    self.eventButton.tintColor = [UIColor captchaBlue];
     self.pickerView.showsSelectionIndicator = YES;
     self.bottomConstraint.constant = 0;
 }
@@ -129,6 +136,7 @@ const int NAVIGATIONBAR_PADDING = 44;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     UILabel *labelOfCell =  (UILabel *)[cell viewWithTag:1];
     UITextField *textField = (UITextField *)[cell viewWithTag:2];
+    [textField resignFirstResponder];
     
     self.datasource = [self getCurrentDatasource];
     
@@ -159,21 +167,28 @@ const int NAVIGATIONBAR_PADDING = 44;
         
         if (self.datasource.count > indexPath.row)
         {
-            labelOfCell.text = NSLocalizedString(@"choose_event", nil);
-            if ([self.datasource[indexPath.row] isKindOfClass:NSString.class])
-            {
-                textField.text = self.datasource[indexPath.row];
-            }
-            else
-            {
-                textField.text = nil;
-            }
+            textField.text = self.datasource[indexPath.row];
             textField.placeholder = NSLocalizedString(@"choose_event", nil);
         }
     }
     cell.selectionStyle = UITableViewCellEditingStyleNone;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.segmentedControl.selectedSegmentIndex == 1)
+    {
+        UITextField *textField = (UITextField *)[cell viewWithTag:2];
+        self.editingTextField = textField;
+        [textField becomeFirstResponder];
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
 }
 
 - (IBAction)reloadTableView:(id)sender
@@ -185,20 +200,18 @@ const int NAVIGATIONBAR_PADDING = 44;
     
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return YES if you want the specified item to be editable.
-    return YES;
-}
-
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (self.segmentedControl.selectedSegmentIndex == 0)
+    {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         //add code here for when you hit delete
         [self.customData removeObjectAtIndex:indexPath.row];
     }
     [self.tableView reloadData];
+    }
 }
 
 
@@ -212,23 +225,27 @@ const int NAVIGATIONBAR_PADDING = 44;
         self.inputAccessoryView = [self createInputAccessoryView];
     }
     
-    self.editingTextField = textField;
-    
     // Now add the view as an input accessory view to the selected textfield.
     if (self.segmentedControl.selectedSegmentIndex == 0)
     {
         [textField setInputAccessoryView:self.inputAccessoryView];
+        self.editingTextField = textField;
         return YES;
     }
     else
     {
         //pop pickerView
+
+        [self.pickerView selectRow:0 inComponent:0 animated:YES];
         [UIView animateWithDuration:ANIMATION_LAPSTIME animations:^{
             [self.pickerView setFrame:self.onFrame];
+            [self.tableView setFrame:self.smallTableViewFrame];
         }];
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell*)[[textField superview] superview]];
-        self.editingTextField.text = self.pickerData[indexPath.row];
-        [self.customData replaceObjectAtIndex:0 withObject:self.editingTextField.text];
+        if (textField.text.length == 0)
+        {
+            textField.text = NSLocalizedString(@"move_up", nil);
+        }
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
         return NO;
     }
 }
@@ -285,9 +302,22 @@ const int NAVIGATIONBAR_PADDING = 44;
             textField.inputAccessoryView = self.toolBar;
             
             self.maxRandomValue = [textField.text intValue];
-            if ((self.maxRandomValue && self.minRandomValue && self.maxRandomValue <= self.minRandomValue) || ([textField.text rangeOfCharacterFromSet:notDigits].location != NSNotFound))
+            
+            UIAlertView *alertNotValid = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"oups", nil) message:NSLocalizedString(@"oups_message", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles: nil];
+            
+            UIAlertView *alertNotHigher = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"oups", nil) message:NSLocalizedString(@"oups_higher_value", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles: nil];
+            
+            int textCastedInInt = [self.editingTextField.text intValue];
+            
+            BOOL textIsAnIntNotNull = textCastedInInt != 0;
+            BOOL secondValueIsHigher = !(self.maxRandomValue && self.minRandomValue && self.maxRandomValue <= self.minRandomValue) || ([textField.text rangeOfCharacterFromSet:notDigits].location != NSNotFound);
+            if (!textIsAnIntNotNull)
             {
-                [self showInvalidDataAlert];
+                [alertNotValid show];
+            }
+            else if (!secondValueIsHigher)
+            {
+                [alertNotHigher show];
                 self.editingTextField.text = nil;
             }
             else
@@ -326,8 +356,7 @@ const int NAVIGATIONBAR_PADDING = 44;
 - (IBAction)addAnEvent:(UIButton *)aButton
 {
     //add a row
-    [self.customData addObject:[NSNull null]];
-    
+    [self.customData addObject: self.pickerData[0]];
     aButton.userInteractionEnabled = NO;
     aButton.tintColor = [UIColor lightGrayColor];
     [self.tableView reloadData];
@@ -355,14 +384,8 @@ const int NAVIGATIONBAR_PADDING = 44;
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)[[self.editingTextField superview] superview]];
-    
     [self.customData replaceObjectAtIndex:indexPath.row withObject:self.pickerData[row]];
     self.editingTextField.text = self.pickerData[row];
-    [self.customData enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        self.eventButton.userInteractionEnabled = YES;
-        self.eventButton.tintColor = [UIColor captchaBlue];
-    }];
-    [self.editingTextField resignFirstResponder];
 }
 
 
@@ -394,13 +417,13 @@ const int NAVIGATIONBAR_PADDING = 44;
     //[self.editingTextField resignFirstResponder];
     if ([self thereIsNoDataInRandomMode] || [self thereIsNoDataInCustomMode] || ([[self.randomData lastObject] integerValue] <= [[self.randomData firstObject] integerValue] && self.segmentedControl.selectedSegmentIndex == 0))
     {
-           [self showInvalidDataAlert];
+        [self showInvalidDataAlert];
     }
     else
     {
         NSArray *vcs = self.navigationController.viewControllers;
         CaptchaFaceSwiftViewController *previousVC = (CaptchaFaceSwiftViewController*)vcs[vcs.count-2];
-    
+        
         previousVC.settingsSaved = YES;
         previousVC.settingsMode = self.segmentedControl.selectedSegmentIndex;
         previousVC.randomSettings = self.randomData;
