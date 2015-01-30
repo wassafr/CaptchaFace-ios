@@ -412,6 +412,12 @@ const int NAVIGATIONBAR_PADDING = 44;
     self.randomData[indexPath.row] = self.editingTextField.text;
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController.navigationBar setHidden:NO];
+}
 - (IBAction)didTouchOkButton:(id)sender
 {
     //[self.editingTextField resignFirstResponder];
