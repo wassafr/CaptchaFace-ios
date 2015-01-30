@@ -1,6 +1,6 @@
 PODS:
-  - CaptchaFace (1.0):
-    - OpenCV (~> 2.4)
+  - CaptchaFace (1.0.3):
+    - OpenCV (~> 2.4.9.1)
   - OpenCV (2.4.9.1)
 
 DEPENDENCIES:
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CaptchaFace: f10d591f8b8af1928ae95368f5d0512ce0e72bf9
+  CaptchaFace: 47c2a20ed67e6a788a65ce0cc1e29e4e3f6fa5c3
   OpenCV: 4190ad68e79e1b9ae7ac53d749e96e8c05041e45
 
 COCOAPODS: 0.35.0

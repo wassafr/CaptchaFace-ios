@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "CaptchaFace"
-  s.version          = "1.0.2"
+  s.version          = "1.0.3"
   s.summary          = "Captchaface SDK reinvents mobile security by ensuring users of an app are real."
   s.homepage         = "https://github.com/wassafr/CaptchaFace-ios"
   s.license          = 'COMMERCIAL'
@@ -23,5 +23,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Headers/*.h'
   s.public_header_files = 'Pod/Headers/*.h'
   s.vendored_libraries= 'Pod/lib/libWtfSDK.a'
-  s.dependency 'OpenCV', '~> 2.4'
+  s.dependency 'OpenCV', '~> 2.4.9.1'
 end
