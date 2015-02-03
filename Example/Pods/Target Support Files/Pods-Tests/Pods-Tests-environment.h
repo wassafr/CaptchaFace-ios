@@ -10,7 +10,7 @@
 #define COCOAPODS_POD_AVAILABLE_CaptchaFace
 #define COCOAPODS_VERSION_MAJOR_CaptchaFace 1
 #define COCOAPODS_VERSION_MINOR_CaptchaFace 0
-#define COCOAPODS_VERSION_PATCH_CaptchaFace 3
+#define COCOAPODS_VERSION_PATCH_CaptchaFace 4
 
 // OpenCV
 #define COCOAPODS_POD_AVAILABLE_OpenCV

@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "CaptchaFace"
-  s.version          = "1.0.3"
+  s.version          = "1.0.4"
   s.summary          = "Captchaface SDK reinvents mobile security by ensuring users of an app are real."
   s.homepage         = "https://github.com/wassafr/CaptchaFace-ios"
   s.license          = 'COMMERCIAL'
