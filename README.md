@@ -8,7 +8,7 @@ CaptchaFace is a tool that allows you to know if a mobile user is really human b
 
 ## Installation
 
-### Cocoapods
+### CocoaPods
 
 [CocoaPods](http://www.cocoapods.org) is the recommended way to add CaptchaFace to your project.
 
